@@ -1,0 +1,37 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "logs:CreateLogStream",
+        "logs:CreateLogGroup"
+      ],
+      "Resource": [
+        "arn:aws:logs:eu-west-1:486389912938:log-group:/aws/lambda/apconstantine-dev*:*"
+      ],
+      "Effect": "Allow"
+    },
+    {
+      "Action": [
+        "logs:PutLogEvents"
+      ],
+      "Resource": [
+        "arn:aws:logs:eu-west-1:486389912938:log-group:/aws/lambda/apconstantine-dev*:*:*"
+      ],
+      "Effect": "Allow"
+    },
+    {
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents",
+        "ec2:CreateNetworkInterface",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DeleteNetworkInterface",
+        "lambda:InvokeFunction"
+      ],
+      "Resource": "*",
+      "Effect": "Allow"
+    }
+  ]
+}

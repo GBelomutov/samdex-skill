@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29905.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AP.Constantine.Console", "AP.Constantine\AP.Constantine.Console.csproj", "{229DA636-0570-4B40-8B14-74B0A5056762}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AP.Constantine.BusinessLogic", "AP.Constantine.BusinessLogic\AP.Constantine.BusinessLogic.csproj", "{D579D588-B442-4563-A047-DF05D4778458}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{6E85A94C-1F79-4ED6-84B4-F7E6D93B987A}"
+	ProjectSection(SolutionItems) = preProject
+		apiGateWay.tf = apiGateWay.tf
+		lambdas.tf = lambdas.tf
+		main.tf = main.tf
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AP.Constantine.Functions", "AO.Constantine.Functions\AP.Constantine.Functions.csproj", "{EDFE316C-1D5B-49A4-80EA-551364FBC07D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dev", "dev", "{B0A3A9D8-8F3E-427A-9222-74FA00C9630D}"
+	ProjectSection(SolutionItems) = preProject
+		terraform.tfvars = terraform.tfvars
+		variables.tf = variables.tf
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aws-iam-roles", "aws-iam-roles", "{88BAD8CA-819D-4DF2-B14C-C6BD80FEAB3C}"
+	ProjectSection(SolutionItems) = preProject
+		aws-iam-role-policy.json = aws-iam-role-policy.json
+		aws-iam-role.json = aws-iam-role.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{229DA636-0570-4B40-8B14-74B0A5056762}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{229DA636-0570-4B40-8B14-74B0A5056762}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{229DA636-0570-4B40-8B14-74B0A5056762}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{229DA636-0570-4B40-8B14-74B0A5056762}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D579D588-B442-4563-A047-DF05D4778458}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D579D588-B442-4563-A047-DF05D4778458}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D579D588-B442-4563-A047-DF05D4778458}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D579D588-B442-4563-A047-DF05D4778458}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDFE316C-1D5B-49A4-80EA-551364FBC07D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDFE316C-1D5B-49A4-80EA-551364FBC07D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDFE316C-1D5B-49A4-80EA-551364FBC07D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDFE316C-1D5B-49A4-80EA-551364FBC07D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B0A3A9D8-8F3E-427A-9222-74FA00C9630D} = {6E85A94C-1F79-4ED6-84B4-F7E6D93B987A}
+		{88BAD8CA-819D-4DF2-B14C-C6BD80FEAB3C} = {6E85A94C-1F79-4ED6-84B4-F7E6D93B987A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8F3043F2-F4F3-40AF-A129-ED024ABC1AB1}
+	EndGlobalSection
+EndGlobal
