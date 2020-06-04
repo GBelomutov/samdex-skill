@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -11,14 +11,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Amazon.Lambda.APIGatewayEvents" Version="2.1.0" />
     <PackageReference Include="Amazon.Lambda.Core" Version="1.1.0" />
     <PackageReference Include="Amazon.Lambda.Serialization.Json" Version="1.7.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.4" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="WakeOnLAN" Version="2.0.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AP.Constantine.BusinessLogic\AP.Constantine.BusinessLogic.csproj" />
+    <ProjectReference Include="..\AP.Constantine.BusinessLogic\AP.Constantine.LightControl.csproj" />
+    <ProjectReference Include="..\AP.Constantine.SmartThings\AP.Constantine.SmartThings.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\Requests\" />
   </ItemGroup>
 
 </Project>

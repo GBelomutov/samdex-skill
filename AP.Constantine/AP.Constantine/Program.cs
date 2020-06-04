@@ -13,16 +13,26 @@ namespace AP.Constantine
             Console.WriteLine("Hello World!");
             var function = new ConstantineHandler();
 
-            //await function.Run("test");
-            var configProvider = new LightControlSettingsProvider();
-           
-            var connector = new LightControlConnector(configProvider);
-            var controller = connector.ConnectToGlobalNetworkAsync();
-            while (true)
-            {
-                var key = Console.ReadKey();
-                await HandleInput(key, controller);
-            }
+            await function.TurnOn();
+
+            var response = await function.HandleDeviceCommand(new Amazon.Lambda.APIGatewayEvents.APIGatewayProxyRequest(), null);
+            Console.WriteLine(response.Body);
+
+            var response2 = await function.DevicesList(new Amazon.Lambda.APIGatewayEvents.APIGatewayProxyRequest(), null);
+            Console.WriteLine(response2.Body);
+
+            var response3 = function.DevicesQuery(new Amazon.Lambda.APIGatewayEvents.APIGatewayProxyRequest(), null);
+            Console.WriteLine(response3.Body);
+
+            //var configProvider = new LightControlSettingsProvider();
+            //
+            //var connector = new LightControlConnector(configProvider);
+            //var controller = connector.ConnectToGlobalNetworkAsync();
+            //while (true)
+            //{
+            //    var key = Console.ReadKey();
+            //    await HandleInput(key, controller);
+            //}
             Console.ReadKey();
         }
 

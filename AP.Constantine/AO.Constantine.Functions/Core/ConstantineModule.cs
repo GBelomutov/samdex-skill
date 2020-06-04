@@ -4,6 +4,9 @@ using AP.Constantine.BusinessLogic.Configuration;
 using AP.Constantine.BusinessLogic.Core;
 using AP.Constantine.BusinessLogic.Services;
 using Microsoft.Extensions.DependencyInjection;
+using AP.Constantine.SmartThings;
+using AP.Constantine.SmartThings.Configuration;
+using AP.Constantine.Functions.SmartThings;
 
 namespace AP.Constantine.Functions.Core
 {
@@ -20,6 +23,11 @@ namespace AP.Constantine.Functions.Core
             serviceCollection.AddScoped<IHttpClientSingleton, HttpClientSingleton>();
             serviceCollection.AddSingleton<INetworkConfiguratuionProvider, NetworkConfigurationProvider>();
             serviceCollection.AddTransient<ILoggerService, LoggerService>();
+
+            // SmartThings Module
+            serviceCollection.AddScoped<ISmartThingsClient, SmartThingsClient>();
+            serviceCollection.AddScoped<ISmartThingsParametersProvider, SmartThingsConfigurationProvider>();
+            serviceCollection.AddScoped<ISmartThingsDeviceManager, DeviceManager>();
 
             return serviceCollection.BuildServiceProvider();
         }

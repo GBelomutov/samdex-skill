@@ -7,7 +7,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AO.Constantine.Functions\AP.Constantine.Functions.csproj" />
-    <ProjectReference Include="..\AP.Constantine.BusinessLogic\AP.Constantine.BusinessLogic.csproj" />
+    <ProjectReference Include="..\AP.Constantine.BusinessLogic\AP.Constantine.LightControl.csproj" />
   </ItemGroup>
 
 </Project>
