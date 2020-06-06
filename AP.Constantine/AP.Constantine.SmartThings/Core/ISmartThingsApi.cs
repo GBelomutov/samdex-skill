@@ -41,7 +41,7 @@ namespace AP.Constantine.SmartThings.Core
         /// <param name="componentId">The name of the component.</param>
         /// <returns>Successful return current status of device component's attributes.</returns>
         [Get("v1/devices/{deviceId}/components/{componentId}/status")]
-        Task<CapabilitiesList> GetCapabilities([Path] string deviceId, [Path] string componentId);
+        Task<JObject> GetCapabilities([Path] string deviceId, [Path] string componentId);
 
         /// <summary>
         /// Read details about a device, including device attribute state. For SmartApp tokens, the scope is restricted to the location the SmartApp is installed into.

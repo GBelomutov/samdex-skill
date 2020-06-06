@@ -37,13 +37,18 @@ namespace AP.Constantine.Functions.SmartThings
         public async Task<DeviceStateInfo> GetDeviceState(string deviceId)
         {
             var device = await _client.GetDeviceById(deviceId);
-            var components = device.Components.Select(x =>
-            GetCapabilityStates(deviceId, x).Select(async x => await x).Select(x => x.Result).ToList()).SelectMany(x => x).ToList();
+
+            var componentTasks = device.Components.Select(x => _client.GetCapabilitiesByDeviceId(deviceId, x.Id));
+            var capabilities = (await Task.WhenAll(componentTasks)).SelectMany(x => x).Where(x => x.Instances?.Any() == true);
 
             var deviceStateInfo = new DeviceStateInfo
             {
                 Id = deviceId,
-                Capabilities = components.Select(x => x.MapCapabilityState()).SelectMany(x => x).ToList()
+                Capabilities = capabilities
+                .Select(x => x.MapCapabilityState())
+                .Where(x => x?.Any() == true)
+                .SelectMany(x => x)
+                .ToList()
             };
 
             return deviceStateInfo;
@@ -62,12 +67,6 @@ namespace AP.Constantine.Functions.SmartThings
                 Capabilities = states
             };
             return updatedInfo;
-        }
-
-        private List<Task<CapabilityState>> GetCapabilityStates(string deviceId, DeviceComponent component)
-        {
-            return component.Capabilities.Where(x => x.Type.IsYandexCompatibleCapability())
-                .Select(capability => _client.GetCapabilityState(deviceId, component.Id, capability.Type)).ToList();
         }
     }
 }

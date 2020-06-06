@@ -11,7 +11,6 @@ namespace AP.Constantine.Functions.Models.Capabilities
         public CapabilityInfoToggle()
         {
             Type = Enums.CapabilityType.Toggle;
-            ValueType = Enums.InstanceValueType.Boolean;
         }
     }
 }

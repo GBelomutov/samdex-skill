@@ -5,7 +5,6 @@
         public CapabilityInfoSwitch()
         {
             Type = Enums.CapabilityType.PowerSwitch;
-            ValueType = Enums.InstanceValueType.Boolean;
         }
     }
 }

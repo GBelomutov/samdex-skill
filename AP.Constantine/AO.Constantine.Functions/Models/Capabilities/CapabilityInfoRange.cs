@@ -11,7 +11,6 @@ namespace AP.Constantine.Functions.Models.Capabilities
         public CapabilityInfoRange()
         {
             Type = Enums.CapabilityType.Range;
-            ValueType = Enums.InstanceValueType.Float;
         }
     }
 }

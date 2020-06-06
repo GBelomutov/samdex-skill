@@ -6,12 +6,9 @@ namespace AP.Constantine.Functions.Models.Capabilities
     public abstract class CapabilityInfoBase : CapabilityBase
     {
         [JsonIgnore]
-        public InstanceValueType ValueType { get; set; }
-
-        [JsonIgnore]
         public InstanceType FunctionName { get; set; }
 
         [JsonProperty("retrievable")]
-        public bool Retrievable { get; set; }
+        public bool Retrievable { get; set; } = true;
     }
 }

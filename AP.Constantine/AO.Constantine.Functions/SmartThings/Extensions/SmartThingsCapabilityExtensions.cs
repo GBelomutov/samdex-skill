@@ -1,5 +1,6 @@
 ﻿using AP.Constantine.Functions.Models.Capabilities;
 using AP.Constantine.Functions.Models.Enums;
+using AP.Constantine.Shared.Extensions;
 using AP.Constantine.SmartThings.Domain.Models;
 using System;
 using System.Collections.Generic;
@@ -21,11 +22,11 @@ namespace AP.Constantine.Functions.SmartThings.Extensions
 
         private static readonly Dictionary<CapabilityType, Func<CapabilityInfoBase>> _capabilityTypeInfoCreators = new Dictionary<CapabilityType, Func<CapabilityInfoBase>>
         {
-            { CapabilityType.Switch, CreateSwitchCapability },
-            { CapabilityType.AudioMute, CreateAudioMuteCapability },
-            { CapabilityType.MediaPlayback, CreatePauseCapability },
+            //{ CapabilityType.Switch, CreateSwitchCapability },
+            //{ CapabilityType.AudioMute, CreateAudioMuteCapability },
+            //{ CapabilityType.MediaPlayback, CreatePauseCapability },
             { CapabilityType.MediaInputSource, CreateInputSourceModeCapability },
-            { CapabilityType.AudioVolume, CreateAudioVolumeCapability },
+            //{ CapabilityType.AudioVolume, CreateAudioVolumeCapability },
         };
 
         private static readonly Dictionary<InstanceType, CapabilityType> _instanceTypeCapabilityDefenitions = new Dictionary<InstanceType, CapabilityType>
@@ -73,6 +74,10 @@ namespace AP.Constantine.Functions.SmartThings.Extensions
         public static List<Models.Capabilities.CapabilityState> MapCapabilityState(this CapabilityState source)
         {
             var info = source.Type.MapCapabilityInfo();
+            if(info == null)
+            {
+                return null;
+            }
 
             var capabilities = source.Instances.Select(x => new Models.Capabilities.CapabilityState
             {

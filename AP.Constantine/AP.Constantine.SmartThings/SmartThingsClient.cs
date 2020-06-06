@@ -1,4 +1,5 @@
-﻿using AP.Constantine.SmartThings.Configuration;
+﻿using AP.Constantine.Shared.Extensions;
+using AP.Constantine.SmartThings.Configuration;
 using AP.Constantine.SmartThings.Core;
 using AP.Constantine.SmartThings.Domain.Enums;
 using AP.Constantine.SmartThings.Domain.Models;
@@ -6,6 +7,7 @@ using AP.Constantine.SmartThings.Domain.Requests;
 using AP.Constantine.SmartThings.Domain.Responses;
 using Newtonsoft.Json.Linq;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Threading.Tasks;
@@ -18,7 +20,7 @@ namespace AP.Constantine.SmartThings
 
         Task<Device> GetDeviceById(string id);
 
-        Task<CapabilitiesList> GetCapabilitiesByDeviceId(string id);
+        Task<List<CapabilityState>> GetCapabilitiesByDeviceId(string id, string componentId);
 
         Task<CapabilityState> GetCapabilityState(string deviceId, string componentId, CapabilityType capabilityId);
 
@@ -41,10 +43,11 @@ namespace AP.Constantine.SmartThings
 
         public async Task<DevicesList> GetDevices() => await _api.GetDevices();
 
-        public async Task<CapabilitiesList> GetCapabilitiesByDeviceId(string id)
+        public async Task<List<CapabilityState>> GetCapabilitiesByDeviceId(string id, string componentId)
         {
-            var response = await _api.GetCapabilities(id, "main");
-            return response;
+            var rawResponse = await _api.GetCapabilities(id, componentId);
+            var capabilitiesObjects = rawResponse.Properties().Select(x => GetCapabilityState((JObject)x.Value, x.Name.ToEnum<CapabilityType>())).ToList();
+            return capabilitiesObjects;
         }
 
         public async Task<CapabilityState> GetCapabilityState(string deviceId, string componentId, CapabilityType capabilityId)

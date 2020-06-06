@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Runtime.Serialization;
 
-namespace AP.Constantine.Functions.SmartThings.Extensions
+namespace AP.Constantine.Shared.Extensions
 {
     public static class EnumExtensions
     {

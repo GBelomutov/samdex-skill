@@ -11,7 +11,6 @@ namespace AP.Constantine.Functions.Models.Capabilities
         public CapabilityInfoMode()
         {
             Type = Enums.CapabilityType.Mode;
-            ValueType = Enums.InstanceValueType.Mode;
         }
     }
 }

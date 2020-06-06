@@ -36,8 +36,8 @@ namespace AP.Constantine.Functions.SmartThings.Extensions
             {
                 Id = source.Id,
                 Description = source.Label,
-                // Removed room and name assignment to specify it deirectly in Yandex
-                //Name = source.Name,
+                Name = source.Name,
+                // Removed room assignment to specify it deirectly in Yandex
                 //Room = source.RoomId,
                 Type = type,
                 Capabilities = source.Components
