@@ -1,5 +1,4 @@
-﻿using AP.Constantine.Functions;
-using AP.Constantine.BusinessLogic.Services;
+﻿using AP.Constantine.BusinessLogic.Services;
 using System;
 using System.Drawing;
 using System.Threading.Tasks;
@@ -8,21 +7,9 @@ namespace AP.Constantine
 {
     class Program
     {
-        static async Task Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello World!");
-            var function = new ConstantineHandler();
-
-            await function.TurnOn();
-
-            var response = await function.HandleDeviceCommand(new Amazon.Lambda.APIGatewayEvents.APIGatewayProxyRequest(), null);
-            Console.WriteLine(response.Body);
-
-            var response2 = await function.DevicesList(new Amazon.Lambda.APIGatewayEvents.APIGatewayProxyRequest(), null);
-            Console.WriteLine(response2.Body);
-
-            var response3 = function.DevicesQuery(new Amazon.Lambda.APIGatewayEvents.APIGatewayProxyRequest(), null);
-            Console.WriteLine(response3.Body);
+            Console.WriteLine("Hello World!");            
 
             //var configProvider = new LightControlSettingsProvider();
             //
@@ -65,3 +52,9 @@ namespace AP.Constantine
         }
     }
 }
+
+
+
+
+
+

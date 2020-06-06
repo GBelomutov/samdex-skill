@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using AP.Constantine.SmartThings;
 using AP.Constantine.SmartThings.Configuration;
 using AP.Constantine.Functions.SmartThings;
+using AP.Constantine.Functions.Authentication;
 
 namespace AP.Constantine.Functions.Core
 {
@@ -23,6 +24,9 @@ namespace AP.Constantine.Functions.Core
             serviceCollection.AddScoped<IHttpClientSingleton, HttpClientSingleton>();
             serviceCollection.AddSingleton<INetworkConfiguratuionProvider, NetworkConfigurationProvider>();
             serviceCollection.AddTransient<ILoggerService, LoggerService>();
+            serviceCollection.AddScoped<IAuthenticationProvider, AuthenticationProvider>();
+
+            serviceCollection.AddScoped<IWakeOnLanService, WakeOnLanService>();
 
             // SmartThings Module
             serviceCollection.AddScoped<ISmartThingsClient, SmartThingsClient>();

@@ -30,9 +30,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aws-iam-roles", "aws-iam-ro
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration", "{65EBBA1F-6530-4755-BC71-1FD0107FAE99}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AP.Constantine.SmartThings.Domain", "AP.Constantine.SmartThings.Domain\AP.Constantine.SmartThings.Domain.csproj", "{FDE86881-2B0C-45C8-9146-3DFF8B28145E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AP.Constantine.SmartThings.Domain", "AP.Constantine.SmartThings.Domain\AP.Constantine.SmartThings.Domain.csproj", "{FDE86881-2B0C-45C8-9146-3DFF8B28145E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AP.Constantine.SmartThings", "AP.Constantine.SmartThings\AP.Constantine.SmartThings.csproj", "{AF972832-F9B5-44D2-AE2A-D638CA3735E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AP.Constantine.SmartThings", "AP.Constantine.SmartThings\AP.Constantine.SmartThings.csproj", "{AF972832-F9B5-44D2-AE2A-D638CA3735E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{10545793-FB7C-4B8D-A2D1-C03355AA4620}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AP.Constantine.Functions.Tests", "AP.Constantine.Functions.Tests\AP.Constantine.Functions.Tests.csproj", "{4A2FCA54-FACE-4B14-ACB6-2768EFDB0D98}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -60,6 +64,10 @@ Global
 		{AF972832-F9B5-44D2-AE2A-D638CA3735E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF972832-F9B5-44D2-AE2A-D638CA3735E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF972832-F9B5-44D2-AE2A-D638CA3735E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A2FCA54-FACE-4B14-ACB6-2768EFDB0D98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A2FCA54-FACE-4B14-ACB6-2768EFDB0D98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A2FCA54-FACE-4B14-ACB6-2768EFDB0D98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A2FCA54-FACE-4B14-ACB6-2768EFDB0D98}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,6 +78,7 @@ Global
 		{88BAD8CA-819D-4DF2-B14C-C6BD80FEAB3C} = {6E85A94C-1F79-4ED6-84B4-F7E6D93B987A}
 		{FDE86881-2B0C-45C8-9146-3DFF8B28145E} = {65EBBA1F-6530-4755-BC71-1FD0107FAE99}
 		{AF972832-F9B5-44D2-AE2A-D638CA3735E8} = {65EBBA1F-6530-4755-BC71-1FD0107FAE99}
+		{4A2FCA54-FACE-4B14-ACB6-2768EFDB0D98} = {10545793-FB7C-4B8D-A2D1-C03355AA4620}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8F3043F2-F4F3-40AF-A129-ED024ABC1AB1}

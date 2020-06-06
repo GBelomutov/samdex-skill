@@ -8,12 +8,14 @@
     <Version>1.0.0</Version>
     <AssemblyVersion>1.0.1.0</AssemblyVersion>
     <FileVersion>1.0.1.0</FileVersion>
+    <langversion>8</langversion>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Amazon.Lambda.APIGatewayEvents" Version="2.1.0" />
     <PackageReference Include="Amazon.Lambda.Core" Version="1.1.0" />
     <PackageReference Include="Amazon.Lambda.Serialization.Json" Version="1.7.0" />
+    <PackageReference Include="AWSSDK.CognitoIdentityProvider" Version="3.3.109.47" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.4" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="WakeOnLAN" Version="2.0.2" />
@@ -22,10 +24,6 @@
   <ItemGroup>
     <ProjectReference Include="..\AP.Constantine.BusinessLogic\AP.Constantine.LightControl.csproj" />
     <ProjectReference Include="..\AP.Constantine.SmartThings\AP.Constantine.SmartThings.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Models\Requests\" />
   </ItemGroup>
 
 </Project>

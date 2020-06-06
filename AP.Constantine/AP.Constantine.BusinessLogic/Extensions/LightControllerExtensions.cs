@@ -9,15 +9,12 @@ namespace AP.Constantine.BusinessLogic.Extensions
     {
         public static Color ToColor(this byte[] data, LightMode mode)
         {
-            switch (mode)
+            return mode switch
             {
-                case LightMode.Color:
-                    return Color.FromArgb(data[6], data[7], data[8]);
-                case LightMode.White:
-                    return Color.White;
-                default:
-                    return Color.Transparent;
-            }
+                LightMode.Color => Color.FromArgb(data[6], data[7], data[8]),
+                LightMode.White => Color.White,
+                _ => Color.Transparent,
+            };
         }
 
         public static LightMode ToLightMode(this string hex)

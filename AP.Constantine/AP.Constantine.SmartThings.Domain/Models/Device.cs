@@ -23,7 +23,7 @@ namespace AP.Constantine.SmartThings.Domain.Models
         public string RoomId { get; set; }
 
         [JsonProperty("components")]
-        public List<Component> Components { get; set; }
+        public List<DeviceComponent> Components { get; set; }
 
         [JsonProperty("Profile")]
         public DeviceProfile Profile { get; set; }

@@ -2,7 +2,7 @@ resource "aws_lambda_function" "ap_constantine_healthcheck" {
   filename         = "AP.Constantine.zip"
   function_name    = "apconstantine_healthcheck"
   role             = "${aws_iam_role.aws_ap_constantine.arn}"
-  handler          = "AP.Constantine.Functions::AP.Constantine.Functions.ConstantineHandler::HealthCheck"
+  handler          = "AP.Constantine.Functions::AP.Constantine.Functions.HealthCheckFunction::Handle"
   source_code_hash = "${filebase64sha256("AP.Constantine.zip")}"
   runtime          = "dotnetcore3.1"
   timeout          = 10
@@ -13,7 +13,7 @@ resource "aws_lambda_function" "ap_constantine_unlink" {
   filename         = "AP.Constantine.zip"
   function_name    = "apconstantine_unlink"
   role             = "${aws_iam_role.aws_ap_constantine.arn}"
-  handler          = "AP.Constantine.Functions::AP.Constantine.Functions.ConstantineHandler::Unlink"
+  handler          = "AP.Constantine.Functions::AP.Constantine.Functions.UnlinkFunction::Handle"
   source_code_hash = "${filebase64sha256("AP.Constantine.zip")}"
   runtime          = "dotnetcore3.1"
   timeout          = 10
@@ -24,7 +24,7 @@ resource "aws_lambda_function" "ap_constantine_devicesList" {
   filename         = "AP.Constantine.zip"
   function_name    = "apconstantine_deviceslist"
   role             = "${aws_iam_role.aws_ap_constantine.arn}"
-  handler          = "AP.Constantine.Functions::AP.Constantine.Functions.ConstantineHandler::DevicesList"
+  handler          = "AP.Constantine.Functions::AP.Constantine.Functions.DeviceListFunction::Handle"
   source_code_hash = "${filebase64sha256("AP.Constantine.zip")}"
   runtime          = "dotnetcore3.1"
   timeout          = 10
@@ -35,7 +35,7 @@ resource "aws_lambda_function" "ap_constantine_devicesQuery" {
   filename         = "AP.Constantine.zip"
   function_name    = "apconstantine_devicesquery"
   role             = "${aws_iam_role.aws_ap_constantine.arn}"
-  handler          = "AP.Constantine.Functions::AP.Constantine.Functions.ConstantineHandler::DevicesQuery"
+  handler          = "AP.Constantine.Functions::AP.Constantine.Functions.DevicesQueryFunction::Handle"
   source_code_hash = "${filebase64sha256("AP.Constantine.zip")}"
   runtime          = "dotnetcore3.1"
   timeout          = 10
@@ -46,7 +46,7 @@ resource "aws_lambda_function" "ap_constantine_devicesAction" {
   filename         = "AP.Constantine.zip"
   function_name    = "apconstantine_handledevicecommand"
   role             = "${aws_iam_role.aws_ap_constantine.arn}"
-  handler          = "AP.Constantine.Functions::AP.Constantine.Functions.ConstantineHandler::HandleDeviceCommand"
+  handler          = "AP.Constantine.Functions::AP.Constantine.Functions.SendCommandFunction::Handle"
   source_code_hash = "${filebase64sha256("AP.Constantine.zip")}"
   runtime          = "dotnetcore3.1"
   timeout          = 10
