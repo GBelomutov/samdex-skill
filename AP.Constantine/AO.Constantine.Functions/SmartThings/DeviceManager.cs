@@ -61,6 +61,8 @@ namespace AP.Constantine.Functions.SmartThings
 
             var result = await _client.SendCommand(deviceId, request);
 
+            states.ForEach(x => x.ActionResult = new ActionResult { Status = Models.Enums.ActionResultStatus.Done });
+
             var updatedInfo = new DeviceUpdatedInfo
             {
                 Id = deviceId,
