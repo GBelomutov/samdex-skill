@@ -13,7 +13,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace AP.Constantine.Functions.Functions
+namespace AP.Constantine.Functions
 {
     public abstract class FunctionBase
     {

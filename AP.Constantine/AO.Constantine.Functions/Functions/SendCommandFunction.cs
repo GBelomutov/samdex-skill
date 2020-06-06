@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AP.Constantine.Functions.Functions
+namespace AP.Constantine.Functions
 {
     /// <summary>
     /// Send command to device.

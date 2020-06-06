@@ -1,7 +1,7 @@
 ﻿using AP.Constantine.Functions.Models.Responses;
 using System.Threading.Tasks;
 
-namespace AP.Constantine.Functions.Functions
+namespace AP.Constantine.Functions
 {
     /// <summary>
     /// Request for supplied devices list.

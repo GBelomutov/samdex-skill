@@ -58,10 +58,6 @@ namespace AP.Constantine.Functions.SmartThings
 
             var updatedInfo = new DeviceUpdatedInfo
             {
-                ActionResult = new ActionResult
-                {
-                    Status = result ? "DONE" : "FAILURE"
-                },
                 Id = deviceId,
                 Capabilities = states
             };

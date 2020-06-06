@@ -1,9 +1,5 @@
 ﻿using Amazon.Lambda.APIGatewayEvents;
-using AP.Constantine.Functions.Functions;
 using FluentAssertions;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 

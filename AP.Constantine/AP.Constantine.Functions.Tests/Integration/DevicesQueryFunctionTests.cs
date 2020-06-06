@@ -1,5 +1,4 @@
 ﻿using Amazon.Lambda.APIGatewayEvents;
-using AP.Constantine.Functions.Functions;
 using AP.Constantine.Functions.Models.Requests;
 using FluentAssertions;
 using Newtonsoft.Json;

@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace AP.Constantine.Functions.Functions
+namespace AP.Constantine.Functions
 {
     public class UnlinkFunction : FunctionBase
     {

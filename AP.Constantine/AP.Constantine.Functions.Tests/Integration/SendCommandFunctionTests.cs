@@ -1,5 +1,4 @@
 ﻿using Amazon.Lambda.APIGatewayEvents;
-using AP.Constantine.Functions.Functions;
 using AP.Constantine.Functions.Models.Capabilities;
 using AP.Constantine.Functions.Models.Common;
 using AP.Constantine.Functions.Models.Enums;

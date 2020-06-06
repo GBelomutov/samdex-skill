@@ -4,16 +4,13 @@ using AP.Constantine.Functions.Models.Requests;
 using AP.Constantine.Functions.Models.Responses;
 using AP.Constantine.Functions.Models.Responses.Payload;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 /// <summary>
 /// Request for supplied devices list.
 /// </summary>
-namespace AP.Constantine.Functions.Functions
+namespace AP.Constantine.Functions
 {
     public class DevicesQueryFunction : FunctionBase
     {

@@ -6,7 +6,7 @@ namespace AP.Constantine.Functions.Models.Responses.Payload
 {
     public class DeviceUpdatedInfo : DeviceBase<CapabilityState>
     {
-        [JsonProperty("action_result")]
+        [JsonProperty("action_result", NullValueHandling = NullValueHandling.Ignore)]
         public ActionResult ActionResult { get; set; }
     }
 }
