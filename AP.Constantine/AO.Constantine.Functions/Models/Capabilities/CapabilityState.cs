@@ -7,8 +7,5 @@ namespace AP.Constantine.Functions.Models.Capabilities
     {
         [JsonProperty("state")]
         public State State { get; set; }
-
-        [JsonProperty("action_result", NullValueHandling = NullValueHandling.Ignore)]
-        public ActionResult ActionResult { get; set; }
     }
 }

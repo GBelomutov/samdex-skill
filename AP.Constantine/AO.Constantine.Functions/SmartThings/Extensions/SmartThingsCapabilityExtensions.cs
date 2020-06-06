@@ -22,7 +22,7 @@ namespace AP.Constantine.Functions.SmartThings.Extensions
 
         private static readonly Dictionary<CapabilityType, Func<CapabilityInfoBase>> _capabilityTypeInfoCreators = new Dictionary<CapabilityType, Func<CapabilityInfoBase>>
         {
-            //{ CapabilityType.Switch, CreateSwitchCapability },
+            { CapabilityType.Switch, CreateSwitchCapability },
             //{ CapabilityType.AudioMute, CreateAudioMuteCapability },
             //{ CapabilityType.MediaPlayback, CreatePauseCapability },
             { CapabilityType.MediaInputSource, CreateInputSourceModeCapability },
